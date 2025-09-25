@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catálogo de Peças — JP Máquinas Agrícolas</title>
+<style>
+  body { font-family: 'Inter', system-ui, sans-serif; margin:0; padding:0; background:#f0f0f0; }
+  ul { margin:0; padding-left:20px; }
+  li { margin-bottom:5px; }
+  .group-menu li:hover { cursor:pointer; color:#FF0000; font-weight:bold; }
+</style>
+</head>
+<body>
+
+<div style="display:flex; gap:20px; padding:20px;">
+
+  <!-- Menu de grupos -->
+  <div class="group-menu" style="flex:1; background:#C0C0C0; padding:10px; border-radius:10px;">
+    <p style="text-align:center; color:#FF0000; font-weight:bold;">CLIQUE NO GRUPO PARA VER PEÇAS</p>
+    <ul style="list-style:none; padding:0; font-size:16px;">
+      <li onclick="showGroup('A')"><font color="#000000">Grupo - A - Conjunto do Mandril</font></li>
+      <li onclick="showGroup('B')"><font color="#000000">Grupo - B - Conjunto do Sistema das Facas</font></li>
+      <li onclick="showGroup('C')"><font color="#000000">Grupo - C - Conjunto do Sistema de Catracas</font></li>
+      <li onclick="showGroup('D')"><font color="#000000">Grupo - D - Conjunto do Pinhão</font></li>
+      <li onclick="showGroup('E')"><font color="#000000">Grupo - E - Conjunto do Diferencial</font></li>
+      <li onclick="showGroup('F')"><font color="#000000">Grupo - F - Conjunto do Sistema de Rodagem</font></li>
+      <li onclick="showGroup('G')"><font color="#000000">Grupo - G - Conjunto do Chassi</font></li>
+    </ul>
+  </div>
+
+  <!-- Painel de conteúdo -->
+  <div style="flex:2; padding:20px; border-radius:10px; background-image:url('img/fundo3.jpg'); background-size:cover; background-position:center;" id="group-panel">
+    <div id="group-content" style="color:#000;">
+      <h2 style="font-size:24px; font-weight:bold;">Clique em um grupo para ver as peças</h2>
+    </div>
+  </div>
+
+</div>
+
+<script>
+const groups = {
+  'A': {
+    title: 'GRUPO A — CONJUNTO DO MANDRIL',
+    img: 'catalago_pecas/GRUPO A CONJUNTO DO MANDRIL/peca1.jfif',
+    items: [
+      'A1 — Polia de Regulagem',
+      'A2 — Porca KM 14',
+      'A3 — Calota do Mandril',
+      'A4 — Arruela de Regulagem do Mandril',
+      'A5 — Rolamento Superior do Mandril',
+      'A6 — Retentor Superior do Mandril',
+      'A7 — Chaveta da Polia de Regulagem',
+      'A8 — Tubo do Eixo do Mandril',
+      'A9 — Corpo do Mandril',
+      'A10-11 — Paraf. do Est. Cent. c/Porca',
+      'A12-13-14 — Est. Central c/Porca/Arruela',
+      'A15 — Rol. Inferior do Mandril',
+      'A16 — Bucha de Red. Mandril',
+      'A17 — Retentor Inf. do Mandril',
+      'A18-20-21 — Parafuso de Fix. do Mandril',
+      'A19 — Chapa de Fix. do Mandril',
+      'A22-23 — Est. Lateral com Porca',
+      'A24 — Correa em V - C 68',
+      'A25 — Correa em V - C 75'
+    ]
+  },
+  'B': {
+    title: 'GRUPO B — CONJUNTO DO SISTEMA DAS FACAS',
+    img: 'catalago_pecas/GRUPO B CONJUNTO DO SISTEMA DAS FACAS/peca1.jfif',
+    items: [
+      'B1-2 — Vol. de Reg. c/Paraf de Pressão',
+      'B3 — Eixo do Sup. das Facas',
+      'B4-5-6-7-10 — Paraf. das Facas',
+      'B8 — Facas 750mm',
+      'B9 — Suporte das Facas'
+    ]
+  },
+  'C': {
+    title: 'GRUPO C — CONJUNTO DO SISTEMA DE CATRACAS',
+    img: 'catalago_pecas/GRUPO C CONJUNTO DO SISTEMA DE CATRACAS/peca1.jfif',
+    items: [
+      'C1-2 — Paraf. de Fix. Conj. Catr. c/arruela',
+      'C3 — Bujão de Óleo do Chap da Catr',
+      'C4 — Chapéu da Catraca',
+      'C5 — Paraf. de Press da Mola da Catraca',
+      'C6 — Arruela da Mola da Catraca',
+      'C7 — Mola da Catraca',
+      'C8 — Catraca Superior',
+      'C9 — Catraca Inferior',
+      'C10 — Retentor da Catraca Inferior',
+      'C11 — Polia Motora 75',
+      'C11 — Polia Motora 68',
+      'C12-14 — Porca Km 13',
+      'C13 — Arruela Trava Aranha MB 13',
+      'C15 — Rolamento Sup. do Cubo da Catraca',
+      'C16 — Cubo Catraca',
+      'C17 — Rolam. Inf. Cubo Catraca',
+      'C18 — Retentor do Cubo da Catraca',
+      'C19-D4-5 — Paraf Fix. Ponta Catr c/porca/arruela',
+      'C20 — Ponta da Catraca',
+      'C21-A-C24 — Paraf. Fix. da Polia Motora Completo'
+    ]
+  },
+  'D': {
+    title: 'GRUPO D — CONJUNTO DO PINHÃO',
+    img: 'catalago_pecas/GRUPO D CONJUNTO DO PINHAO/peca1.jfif',
+    items: [
+      'D1 — Porca Km 9',
+      'D2 — Rolam Superior do Cubo do Pinhão',
+      'D3 — Cubo do Pinhão',
+      'D4-5-C19 — Paraf. Fix. Ponta Catraca c/Porca/Arruela',
+      'D6 — Arruela de Ajuste Rolam. Inf. Cubo Pinhão',
+      'D7 — Rolam. Inferior Cubo do Pinhão',
+      'D9-10 — Paraf. Fix. Cubo do Pinhão c/Arruela',
+      'D1-8 — Pinhão Cônico 9 Dentes c/Porca Km 9'
+    ]
+  },
+  'E': {
+    title: 'GRUPO E — CONJUNTO DO DIFERENCIAL',
+    img: 'catalago_pecas/GRUPO E CONJUNTO DO DIFERENCIAL/peca1.jfif',
+    items: [
+      'E1-2 — Paraf. Fix. Carcaça conj. Engren. c/arruela',
+      'E3-4 — Paraf. Fix. Tampa Lateral Esquerda c/arruela',
+      'E5 — Tampa Lateral Esquerda',
+      'E6 — Carcaça Conj. Engrenagens',
+      'E7 — Guia do Eixo Garfo de Trans',
+      'E8 — Cubo do Ret. Eixo Trans.',
+      'E9 — Retent do Eixo Trans.',
+      'E10-11 — Paraf. Trava do Eixo Trans. c/porca',
+      'E12 — Eixo do Grafo de Ac. Trans.',
+      'E13-14 — Porca e Arruela do Pris.',
+      'E15-16 — Paraf. e Arruela do Paraf. de Fix. da Tampa lat. Dir',
+      'E17 — Tampa Lateral Direita',
+      'E18-19 — Paraf. e Arruela de Fix. do Garfo de Acion. da Transm.',
+      'E20 — Garfo de Acionamento da Transm.',
+      'E21 — Paraf. de Fix. da Trava do Eixo de Comando',
+      'E22 — Trava do Eixo do Comando',
+      'E23 — Rolamento Lat. Dir. do Eixo do Comando (80704 OU)',
+      'E24 — Anel de Acionamento Trans.',
+      'E25 — Eixo do Comando',
+      'E26 — Chaveta do Eixo do Comando',
+      'E27 — Cilíndrico 13',
+      'E28 — Coroa Cônica 28',
+      'E29 — Rolam. Lat. Esq. do Comando (33281/807046 OU)',
+      'E30 — Rolam. da Caixa Satélite (807040)',
+      'E31-36-43 — Paraf. da Caixa Satélite c/porca e arruela',
+      'E32 — Trav. do Rolam. Cx. Satélite',
+      'E33-34 — Paraf. de Fix. do Manual e Arruela',
+      'E35 — Mancal de Fixação e Cx. Satélite',
+      'E37 — Caixa Satélite',
+      'E39 — Arruela de Aj. Pinhão Satélite',
+      'E40 — Cruzeta do Pinhão Satélite',
+      'E41 — Pinhão Satélite',
+      'E42 — Engrenagem Planetária',
+      'E44 — Coroa Cilíndrica 38'
+    ]
+  },
+  'F': {
+    title: 'GRUPO F — CONJUNTO DO SISTEMA DE RODAGEM',
+    img: 'catalago_pecas/GRUPO F CONJUNTO DO SISTEMA DE RODAGEM/peca1.jfif',
+    items: [
+      'F1 — Carcaça do Diferencial',
+      'F2 — Calota do Cubo da Roda',
+      'F3 — Ret. Traz. do Cubo da Roda (025)',
+      'F4 — Rolam. Traz. do Cubo da Roda (3328 OU)',
+      'F5 — Cubo da Roda F4/S4',
+      'F5 — Cubo da Roda NVS',
+      'F6 — Rolam. Diant. do Cubo da Roda',
+      'F7 — Porca da Carcaça',
+      'F8 — Trava da Porca da Carcaça',
+      'F9 — Roda F4',
+      'F9 — Roda S4',
+      'F9 — Roda NVS',
+      'F10 — Garras da Roda F4 (jogo)',
+      'F10 — Garras da Roda S4 (jogo)',
+      'F10 — Garras da Roda NVS (jogo)',
+      'F11 — Ponta de Eixo',
+      'F12-13 — Paraf. de Fix. da Ponta de Eixo e Arruelas',
+      'F14-15-16 — Paraf. de Fix. da Roda c/porca/arruela'
+    ]
+  },
+  'G': {
+    title: 'GRUPO G — CONJUNTO DO CHASSI',
+    img: 'catalago_pecas/GRUPO G CONJUNTO DO CHASSI/peca1.jfif',
+    items: [
+      'G1 — Chapa de Proteção da Carcaça',
+      'G7 — Chapa de Proteção do Quadro Chassi',
+      'G1-5 a 10 — Chassi Completo F4',
+      'G1-5 a 10 — Chassi Completo S4',
+      'G1-5 a 10 — Chassi Completo NVS',
+      'G2-3-4 — Abraç. de Fix. da Carc. c/porca/arruela',
+      'G8 — Cabeçalho Móvel c/arruela',
+      'G9 — Cabeçalho Móvel c/rosca'
+    ]
+  }
+};
+
+function showGroup(groupId){
+  const group = groups[groupId];
+  const container = document.getElementById('group-content');
+  container.innerHTML = `
+    <div style="display:flex; flex-direction:row; gap:20px;">
+      <div style="flex:2;">
+        <h2 style="font-size:24px; font-weight:bold; color:#000;">${group.title}</h2>
+        <ul style="list-style:decimal inside; font-size:16px; line-height:1.6; color:#000; font-weight:bold;">
+          ${group.items.map(item => `<li>${item}</li>`).join('')}
+        </ul>
+      </div>
+      <div style="flex:1;">
+        <img src="${group.img}" style="width:100%; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,0.3);">
+      </div>
+    </div>
+  `;
+}
+</script>
+
+</body>
+</html>
