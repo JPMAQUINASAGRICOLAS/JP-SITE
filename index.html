@@ -6,20 +6,27 @@
   <title>JP Máquinas Agrícolas — Santo Expedito</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    .hero-bg { background-image: url('img/fundo-hero.jfif'); }
-    .whatsapp-fab { box-shadow: 0 6px 18px rgba(16, 185, 129, .25); }
+    .hero-bg { 
+      background-image: url('img/fundo4.jpeg'); 
+      background-size: cover;
+      background-position: center;
+    }
+    .whatsapp-fab { 
+      box-shadow: 0 6px 18px rgba(16, 185, 129, .25); 
+    }
   </style>
 </head>
 <body class="antialiased text-gray-800">
 
-  <!-- Header -->
-  <header class="bg-red-700 text-white fixed w-full z-50">
-    <div class="max-w-6xl mx-auto flex items-center justify-between p-4">
+  <!-- Header fixo -->
+  <header class="bg-red-700 text-white fixed top-0 left-0 w-full z-50 h-16">
+    <div class="max-w-6xl mx-auto flex items-center justify-between h-full px-4">
       <div class="text-lg font-bold">JP Máquinas Agrícolas</div>
       <nav class="space-x-6 hidden md:flex">
         <a href="#produtos" class="hover:text-yellow-300">Produtos</a>
         <a href="#videos" class="hover:text-yellow-300">Vídeos</a>
         <a href="#contato" class="hover:text-yellow-300">Contato</a>
+        <a href="pecas.html" class="hover:text-yellow-300 font-bold">Catálogo de Peças</a>
       </nav>
       <div class="flex items-center space-x-3">
         <a href="mailto:jpmaquinasagricolas25@hotmail.com" class="text-sm md:text-base">jpmaquinasagricolas25@hotmail.com</a>
@@ -28,13 +35,14 @@
     </div>
   </header>
 
-  <!-- Hero -->
+  <!-- Hero com margem-top para compensar o header -->
   <section class="hero-bg bg-cover bg-center h-[60vh] flex items-center mt-16">
     <div class="bg-black bg-opacity-50 w-full">
       <div class="max-w-6xl mx-auto p-8 text-white text-center">
-        <h1 class="text-3xl md:text-5xl font-bold">Roçadeiras de Arrasto — Santo Expedito</h1>
+        <h1 class="text-3xl md:text-5xl font-bold" style="color:#ffffff;">Roçadeiras de Arrasto — Santo Expedito</h1>
         <p class="mt-4 text-lg md:text-2xl">Robustez, tradição e performance no campo.</p>
         <a href="#produtos" class="inline-block mt-6 bg-red-600 hover:bg-red-700 px-6 py-3 rounded-md text-white">Ver Produtos</a>
+        <a href="pecas.html" class="inline-block mt-4 bg-yellow-500 hover:bg-yellow-600 px-6 py-3 rounded-md text-white font-bold">Ver Catálogo de Peças</a>
       </div>
     </div>
   </section>
@@ -121,17 +129,6 @@
       <p class="mb-2">📞 Telefone/WhatsApp: <a href="https://wa.me/5514998486299" class="text-red-700 font-bold">(14) 99848-6299</a></p>
       <p class="mb-2">📧 Email: <a href="mailto:jpmaquinasagricolas25@hotmail.com" class="text-blue-700 font-bold">jpmaquinasagricolas25@hotmail.com</a></p>
       <p class="mb-6">📍 Avaré - SP</p>
-
-      <form action="mailto:jpmaquinasagricolas25@hotmail.com" method="post" enctype="text/plain" class="max-w-xl mx-auto">
-        <div class="grid grid-cols-1 gap-4">
-          <input name="Nome" required class="p-3 border rounded" placeholder="Seu nome"/>
-          <input name="Email" type="email" required class="p-3 border rounded" placeholder="Seu e-mail"/>
-          <textarea name="Mensagem" required class="p-3 border rounded h-32" placeholder="Sua mensagem"></textarea>
-          <div class="flex items-center justify-center">
-            <button type="submit" class="bg-red-700 hover:bg-red-800 text-white px-6 py-3 rounded">Enviar por e-mail</button>
-          </div>
-        </div>
-      </form>
     </div>
   </section>
 
@@ -142,13 +139,6 @@
       <path d="M17.5 14.5c-.3-.15-1.64-.8-1.9-.9-.25-.08-.43-.14-.62.13-.19.28-.71.9-.87 1.08-.16.19-.32.2-.6.07-.28-.14-1.18-.43-2.25-1.39-.83-.74-1.39-1.65-1.55-1.93-.16-.28-.02-.43.12-.57.12-.12.28-.32.42-.48.14-.16.19-.28.28-.46.09-.19.05-.36-.02-.5-.07-.14-.62-1.49-.85-2.05-.22-.53-.44-.46-.62-.47-.16-.01-.35-.01-.54-.01s-.5.07-.76.36c-.25.28-.98.96-.98 2.34s1.01 2.71 1.15 2.89c.14.19 1.98 3.02 4.8 4.24.67.29 1.19.46 1.6.59.67.21 1.28.18 1.76.11.54-.08 1.64-.67 1.87-1.31.23-.65.23-1.2.16-1.31-.07-.11-.25-.18-.53-.32z"/>
     </svg>
   </a>
-
-  <!-- Footer -->
-  <footer class="bg-red-700 text-white mt-12">
-    <div class="max-w-6xl mx-auto p-6 text-center">
-      © 2025 JP Máquinas Agrícolas — Santo Expedito
-    </div>
-  </footer>
 
 </body>
 </html>
